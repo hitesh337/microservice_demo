@@ -1,0 +1,78 @@
+
+------------------------------------------------------------------------------------------------------------------------------
+
+6. What does the @SpringBootApplication annotation do internally?
+The @SpringBootApplication annotation is equivalent to using @Configuration, @EnableAutoConfiguration, and @ComponentScan with their default attributes. Spring Boot enables the developer to use a single annotation instead of using multiple. But, as we know, Spring provided loosely coupled features that we can use for each annotation as per our project needs.
+
+
+@Configuration annotation on top of any class to declare that this class provides one or more @Bean methods
+and may be processed by the Spring container to generate bean definitions and service requests for those beans at runtime.
+
+@Bean annotation tells that a method produces a bean to be managed by the Spring container. 
+It is a method-level annotation. 
+During Java configuration (@Configuration), the method is executed and its return value is registered as a bean within a BeanFactory. 
+
+@ComponentScan: It is used when we want to scan a package for beans. It is used with the annotation @Configuration. 
+We can also specify the base packages to scan for Spring Components.
+
+@ComponentScan(basePackages = "com.javatpoint") 
+
+
+@Component: It is a class-level annotation. It is used to mark a Java class as a bean.
+A Java class annotated with @Component is found during the classpath. The Spring Framework pick it up and configure it in the application context as a Spring Bean. 
+
+@lazy
+
+@Controller annotation indicates that a particular class serves the role of a controller. 
+Spring Controller annotation is typically used in combination with annotated handler methods based on the @RequestMapping annotation. 
+It can be applied to classes only. It's used to mark a class as a web request handler
+
+@ResponseBody annotation tells a controller that the object returned is automatically serialized into JSON and passed back into the HttpResponse object
+
+
+@RequestBody annotation is applicable to handler methods of Spring controllers. This annotation indicates that Spring should deserialize a request body into an object. This object is passed as a handler method parameter.
+
+@Primary annotation is used to give higher preference to a bean, 
+when there are multiple beans of same type. The @Primary annotation may be used on any class directly or indirectly annotated with @Component or on methods annotated with @Bean .
+
+@Required annotation applies to bean property setter methods and it indicates that the affected bean property must be populated in XML configuration file at configuration time.
+
+
+@Qualifier There may be a situation when you create more than one bean of the same type and want to wire only one of them with a property. In such cases, you can use the @Qualifier annotation along with @Autowired to remove the confusion by specifying which exact bean will be wired. Following is an example to show the use of @Qualifier annotation]
+
+
+@requestParam
+
+    The @RequestParam is used to read the HTML form data provided by a user and bind it to the request parameter.
+    The Model contains the request data and provides it to view page.
+
+public String display(@RequestParam("name") String name,@RequestParam("pass") String pass,Model m)  
+    {
+    }
+
+
+------------------------------------------------------------------------------------------------------------------------------
+1. Two data base configration in same Spring Boot application ?
+------------------------------------------------------------------------------------------------------------------------------
+2. How many way you can inject prototype into singleton
+------------------------------------------------------------------------------------------------------------------------------
+3. Can we inject Requested Scope bean into single ton bean ?
+------------------------------------------------------------------------------------------------------------------------------
+4. How i channge default bean scope from singleton to prototype ?
+------------------------------------------------------------------------------------------------------------------------------
+5. Intercepter and filter 
+
+
+------------------------------------------------------------------------------------------------------------------------------
+6.Can we bind multiple urls with @RequestMapping annotation -- Done 
+1.difference between serveletcontext & servletconfig  -- Done 
+2.Create single expcetion handler in application -- Done 
+3.Transection managment that are supported by Spring (Tommorow)
+
+Programatic :- 
+Declerative :-
+
+
+@Inject
+@Lookup
+@ControllerAdvice
