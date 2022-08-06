@@ -1,6 +1,7 @@
 
 ------------------------------------------------------------------------------------------------------------------------------
 
+
 6. What does the @SpringBootApplication annotation do internally?
 The @SpringBootApplication annotation is equivalent to using @Configuration, @EnableAutoConfiguration, and @ComponentScan with their default attributes. Spring Boot enables the developer to use a single annotation instead of using multiple. But, as we know, Spring provided loosely coupled features that we can use for each annotation as per our project needs.
 
